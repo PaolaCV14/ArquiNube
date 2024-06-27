@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>V1 APP AN</title>
+        <link rel="stylesheet" href="Style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+        <script src="https://kit.fontawesome.com/d9b93ac081.js" crossorigin="anonymous"></script>
+        
+
+
+
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo-container">
+                <a href="#" class="logo">
+                    <img src="https://i.ibb.co/pw0tzVZ/Screenshot-2024-06-24-193317-removebg-preview.png" alt="Logo">
+                </a>
+                <h1 class="header-title">GAME STORE</h1>
+            </div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="icons"><i class='bx bx-menu'></i></label>
+            <nav class="navbar">
+                <div class="menu-items">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Gallery</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="user-login">
+                    <i class="fa-solid fa-user" style="padding: 20px;"></i>
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalId">Ingresar</a>
+                </div>
+                
+            </nav>
+
+
+        </header>
+        <table style="margin:5%; margin-top: 15ch ;width:90%; background-color: rgba(255, 255, 255, 0.154);">
+            <tr>
+                <td rowspan="3" style="width:20%;">
+                    <img id="GameImage" src="https://upload.wikimedia.org/wikipedia/en/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg" class="card-img-top img-fluid" >
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="color: rgb(255, 251, 251);">
+                    <h5 class="header-title" style="margin: 2%; height: 5ch; color:white" id="GameTitle">(id='GameTitle')</h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="margin: 2%; min-height: 15ch;color: gainsboro;" id="GameDescription">
+                        (id='GameDescription')
+
+                    </p>
+                </td>
+                <td style="width: 20%;">
+                    <a onclick="alert('...')" >
+                        <div class="mini-card">
+                            <i class="fa-solid fa-play"></i>
+                            <h3>Play</h3>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
