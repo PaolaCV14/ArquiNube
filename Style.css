@@ -473,3 +473,10 @@ th {
     font-size: 1.75rem; /* Tamaño de fuente ajustable */
     color: white; /* Color de texto ajustable */
 }
+
+.videojuegos {
+    width: 20%;
+    padding-right: 1cap;
+    padding-left: 0cap;
+
+}
