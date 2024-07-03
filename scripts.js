@@ -3,11 +3,23 @@ let sports=document.getElementById("sports");
 let action=document.getElementById("action");
 let fight=document.getElementById("fight");
 
+let gami ={
+    "gameid": 1,
+    "title": "hola",
+    "imageurl": "",
+    "description": "mundo",
+    "price": "69",
+    "category": "strategy"
+};
 
-let lstrategy;
-let lsports;
-let laction;
-let lfight;
+let lstrategy=[gami];
+let lsports=[];
+let laction=[];
+let lfight=[];
+
+
+
+console.log(lstrategy[0]);
 
 let datos;
 let idxst=0;
@@ -108,6 +120,40 @@ function requestgames(cat, idx){
 }
 
 
+
+function card(cat, idx){
+    
+    let game;
+
+    switch ( cat){
+        case "strategy":
+            game=lstrategy[idx];
+            break;
+        case "action":
+            game=laction[idx];
+        break;
+        case "sports":
+            game=lsports[idx];
+        break;
+        case "fight":
+            game=lfight[idx];
+        break;
+
+    }
+    console.log(JSON.stringify(game));
+    let gameObj ={
+        "gameid": game.gameid,
+        "title": game.title,
+        "imageurl": game.imageurl,
+        "description": game.description,
+        "price": game.price,
+        "category": game.category
+    }
+
+    sessionStorage.setItem("Game", JSON.stringify(gameObj));
+
+}
+
 function mostrar(cat, idx){
     
     switch(cat){
@@ -127,7 +173,7 @@ function mostrar(cat, idx){
             for(let i=idx; i<=idx+4; i++){
                 strategy.innerHTML+=`
                 <th class="videojuegos">
-                <div class="card">
+                <div class="card" onclick="card('strategy', i)">
                     <figure>
                         <img src=${lstrategy[i].imageurl} >
                     </figure>
@@ -158,7 +204,7 @@ function mostrar(cat, idx){
             for(let i=idx; i<=idx+4; i++){
                 action.innerHTML+=`
                 <th class="videojuegos">
-                <div class="card">
+                <div class="card" onclick="card('action', i)">
                     <figure>
                         <img src=${laction[i].imageurl} >
                     </figure>
@@ -188,7 +234,7 @@ function mostrar(cat, idx){
             for(let i=idx; i<=idx+4; i++){
                 sports.innerHTML+=`
                 <th class="videojuegos">
-                <div class="card">
+                <div class="card" onclick="card('sports', i)">
                     <figure>
                         <img src=${lsports[i].imageurl} >
                     </figure>
@@ -219,7 +265,7 @@ function mostrar(cat, idx){
             for(let i=idx; i<=idx+4; i++){
                 fight.innerHTML+=`
                 <th class="videojuegos">
-                <div class="card">
+                <div class="card" onclick="card('fight', i)">
                     <figure>
                         <img src=${lfight[i].imageurl} >
                     </figure>
