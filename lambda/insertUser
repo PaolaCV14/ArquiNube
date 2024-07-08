@@ -1,0 +1,46 @@
+import json
+import boto3
+
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('users')
+
+def lambda_handler(event, context):
+    userid = event['userid']
+    name = event['name']
+    email = event['email']
+    password = event['password']
+    
+    response = table.put_item(
+        Item={
+            'userid': userid,
+            'name': name,
+            'email': email,
+            'password': password
+        }
+    )
+    
+    ses_client = boto3.client("ses", region_name="us-east-1")
+    
+    email_response = ses_client.send_email(
+        Destination={
+            "ToAddresses": [
+                email
+            ]
+        },
+        Message={
+            "Body": {
+                "Text": {
+                    "Data": "Welcome to Game Store!"
+                }
+            },
+            "Subject": {
+                "Data": "Email from SES Game Store"
+            }
+        },
+        Source="paolacovaviveros@gmail.com"  
+    )
+    
+    return {
+        'statusCode': 200,
+        'body': json.dumps('User saved successfully!')
+    }
