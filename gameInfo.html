@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>V1 APP AN</title>
+        <link rel="stylesheet" href="Style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+        <script src="https://kit.fontawesome.com/d9b93ac081.js" crossorigin="anonymous"></script>
+
+
+
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo-container">
+                <a href="#" class="logo">
+                    <img src="https://i.ibb.co/pw0tzVZ/Screenshot-2024-06-24-193317-removebg-preview.png" alt="Logo">
+                </a>
+                <h1 class="header-title">GAME STORE</h1>
+            </div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="icons"><i class='bx bx-menu'></i></label>
+            <nav class="navbar">
+                <div class="menu-items">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="user-login">
+                    <i class="fa-solid fa-user" style="padding: 20px;"></i>
+                    <a  href="logIn.html" data-bs-toggle="modal" data-bs-target="#modalId">Sign In</a>
+                    <a  id="logOut" onclick="logOut()">Log Out</a>
+                </div>
+                
+            </nav>
+
+
+        </header>
+        <table style="margin:5%; margin-top: 15ch ;width:90%; background-color: rgba(255, 255, 255, 0.154);">
+            <tr>
+                <td rowspan="3" style="width:20%;">
+                    <img style=" height: 350px;" id="GameImage"  >
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="color: rgb(255, 251, 251);">
+                    <h5 class="header-title" style="margin: 2%; height: 5ch; color:white" id="GameTitle"></h5>
+                </td>
+   
+            </tr>
+            <tr>
+                <td>
+                    <p style="margin: 2%; min-height: 15ch;color: gainsboro;" id="GameDescription">
+                        (id='GameDescription')
+
+                    </p>
+                </td>
+            </tr>
+
+        </table>
+        <script src="scriptGameInfo.js"></script>
+    </body>
+    
+</html>

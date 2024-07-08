@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V1 APP AN</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style2.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/d9b93ac081.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <a href="#" class="logo">
+                <img src="https://i.ibb.co/pw0tzVZ/Screenshot-2024-06-24-193317-removebg-preview.png" alt="Logo">
+            </a>
+            <h1 class="header-title">GAME STORE</h1>
+        </div>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="icons"><i class='bx bx-menu'></i></label>
+        <nav class="navbar">
+            <div class="menu-items">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="user-login">
+                <i class="fa-solid fa-user" style="padding: 20px;"></i>
+                <a  href="logIn.html" data-bs-toggle="modal" data-bs-target="#modalId">Sign In</a>
+                <a  id="logOut" onclick="logOut()">Log Out</a>
+            </div>
+            
+        </nav>
+
+
+    </header>
+    <div class="container" id="container" style="margin-top: 140px;">
+        <div class="form-container sign-up">
+            <form id="signUpForm">
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>Use your email for registration</span>
+                <input type="text" placeholder="Name" id="name" required>
+                <input type="email" placeholder="Email" id="email" required>
+                <input type="password" placeholder="Password" id="password" required>
+                <button type="submit" style="background-color: black;" id="signInDude">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form id="logInForm">
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>Use your email </span>
+                <input type="email" placeholder="Email" id="emailL">
+                <input type="password" placeholder="Password" id="passwordL">
+                <a href="#">Forget Your Password?</a>
+                <button style="background-color: black;">Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h5>Welcome!</h5>
+                    <p>Enter your personal information to start buying the latest games</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h5>Hello!</h5>
+                    <p>Log into your account to see your games and buy more of them</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scriptLog.js"></script>
+</body>
+</html>
