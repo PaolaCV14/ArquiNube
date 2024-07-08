@@ -1,0 +1,35 @@
+import json
+import boto3
+
+# Se crea un nuevo objeto de DynamoDB usando AWS SDK
+dynamodb = boto3.resource('dynamodb')
+# Usamos dicho objeto para seleccionar la tabla
+table = dynamodb.Table('gameData')
+
+def lambda_handler(event, context):
+    # Extraemos los valores mandados desde el 'event'
+    game_id = event['gameid']
+    title = event['title']
+    imageurl = event['imageurl']
+    description = event['description']
+    price = event['price']
+    category = event['category']
+    
+    # Escribir la data del juego en la tabla
+    response = table.put_item(
+        Item={
+            'gameid': game_id,
+            'title': title,
+            'imageurl': imageurl,
+            'description': description,
+            'price': price,
+            'category': category
+             
+        }
+    )
+    
+    # Regresar un objeto JSON
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Se guardó el juego!')
+    }
